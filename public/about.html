@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>MAB Technologies - Admin Console</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<script src="/__/firebase/7.10.0/firebase-app.js"></script>
+  		<script src="/__/firebase/7.10.0/firebase-auth.js"></script>
+  		<script src="/__/firebase/init.js"></script>
+
+
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.slim.js"
+		integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+		crossorigin="anonymous"></script>
+	<script>
+		firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+		  console.log("User Signed in")
+		  
+        } else {
+          window.location.href = "/"
+        }
+	});
+			
+	</script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		
+			<!-- Brand and toggle /* get grouped for better mobile display */ -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Drone Data System</a>
+			</div>
+			<!--/ Brand and toggle -->
+	
+			<!-- Top Menu Items -->
+			<ul class="nav navbar-right top-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Settings <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<a href="/"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!-- / Top Menu Items -->
+		
+			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav side-nav">
+					<li>
+						<a href="/admin"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+						<a href="/about"><i class="fa fa-fw fa-fw"></i> About</a>
+					</li>
+				</ul>
+			</div>
+			<!-- / Sidebar Menu Items -->
+
+		</nav>
+
+		<div id="page-wrapper">
+		<div class="container-fluid">
+			<!-- Page Heading -->
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="page-header"> Data Studio - About</h1>
+					<ol class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a> <i class="fa fa-dashboard"></i>  
+						</li>
+						<li class="active">
+							<i class="fa fa-file"></i> About
+						</li>
+					</ol>
+				</div>
+			</div>
+                 
+            <div class="row">
+                
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Welcome to the Drone Data System, your number one source for all things industrial data.</h2>
+                    <p class="lead">
+                        We're dedicated to giving you the very best information, with a focus on 
+                        dependability, customer service and uniqueness.
+                        Founded in 2009 by Mark Bray, MAB Technologies has come a long way from its beginnings. 
+                        When Mark Bray first started out, his passion for helping the community through industrial automation 
+                        drove him to do intense research, quit his day job, 
+                        and gave him the impetus to turn hard work and inspiration into to a booming engineering group. 
+                        The Drone Data System serves customers data from the plant to your pocket.  
+                                                
+                        We hope that you will enjoy our products as much as we enjoy offering them to you. 
+                        If you have any questions or comments, please don't hesitate to contact us.</p>
+                    </p>
+                </div>
+                
+                <div class="col-lg-5 col-lg-offset-1 col-sm-6">
+                    <img class="img-responsive" src="img/building.jpg" alt="">
+                </div>
+                    
+                <!-- /.container -->
+        
+            </div>
+
+		</div>
+        <!-- /#page-wrapper -->
+
+    	</div>
+		<!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+</body>
+
+</html>

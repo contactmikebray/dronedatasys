@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MAB Technologies</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- update the version number as needed -->
+	 <script defer src="/__/firebase/7.10.0/firebase-app.js"></script>
+	 <!-- include only the Firebase features as you need -->
+	 <script defer src="/__/firebase/7.10.0/firebase-auth.js"></script>
+	 <script defer src="/__/firebase/7.10.0/firebase-database.js"></script>
+	 <script defer src="/__/firebase/7.10.0/firebase-messaging.js"></script>
+	 <script defer src="/__/firebase/7.10.0/firebase-storage.js"></script>
+	 <!-- initialize the SDK after all desired features are loaded -->
+	 <script defer src="/__/firebase/init.js"></script>
+
+    <script>
+        function login() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            provider.addScope('profile');
+            provider.addScope('email');
+            firebase.auth().signInWithPopup(provider).then(function (result) {
+                // This gives you a Google Access Token.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                console.log(user.email);
+
+                if (user.email == "mikebray@mabtechnologies.net"){
+                    location.replace("admin.html");
+                }
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>M<span style="font-size:0.8em">A</span>B Technologies</h1>
+                        <h3>Industrial Data Division</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li></li>
+                            <li>
+                                <img src='img\btn_google_signin_light_focus_web.png' onclick="login()" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+    <a name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Industrial Internet of Things:<br>(IIoT)</h2>
+                    <p class="lead">
+                        <a href="https://mabtechnologies.net">
+                            M<span style="font-size: 0.8em">A</span>B 
+                            Technologies
+                        </a> 
+                        to bring data from the plant, to on the go. People here in Northeast Wisconsin enjoy their family
+                        time. Having a overview of production machinery helps
+                        maintenance see what is going on before they need to go to the plant.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/demo.PNG" alt="Industrial Data System in Use">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Know What's Broken, and Fix it Faster</h2>
+                    <p class="lead">
+                        <span style="text-align: center;"><em>Alarms are going off, the machiene is down... just what is going on here?</em></span>
+                        <br />
+                        <strong>M<span style="font-size: 0.8em;">A</span>B
+                        IIoT solution</strong> helps our engineering team get a clear view of what is going on.
+                        We can take a look at the machine before having to crack open a cabinet or stop production.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/field_engineering_services_north_east_wisconsin.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">When will this be ready for installation?</h2>
+                    <p class="lead">We take security very seriously, because protecting your data is top priority.
+                        Please stay tuned for updates.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/secure.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <a name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>IIoT Tool in Development:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li></li>
+                        <li>
+                            <a href="https://mabtechnologies.net/contact" class="btn btn-default btn-lg"></i> <span
+                                    class="network-name">In Development, Stay Tuned</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="about">About</a>
+                        </li>
+                        <li>
+                            <a href="http://www.mabtechnologies.net/about/">Services</a>
+                        </li>
+                        <li>
+                            <a href="login">Login</a>
+                        </li>
+                        <li>
+                            <a href="http://www.mabtechnologies.net/contact/">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; MAB Technologies 2020. All Rights Reserved.
+                        <a href="about/privacy"><u>Privacy Policy</u></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="/__/firebase/7.10.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/7.10.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/7.10.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.10.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
+</body>
+
+</html>
